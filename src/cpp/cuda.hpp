@@ -2095,6 +2095,9 @@ namespace pycuda
       CUevent handle() const
       { return m_event; }
 
+      intptr_t handle_int() const
+      { return (intptr_t) m_event; }
+
       event *synchronize()
       {
         CUDAPP_CALL_GUARDED_THREADED(cuEventSynchronize, (m_event));

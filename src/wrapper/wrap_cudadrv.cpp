@@ -1554,6 +1554,7 @@ BOOST_PYTHON_MODULE(_driver)
       .DEF_SIMPLE_METHOD(query)
       .DEF_SIMPLE_METHOD(time_since)
       .DEF_SIMPLE_METHOD(time_till)
+      .add_property("handle", &cl::handle_int)
 #if CUDAPP_CUDA_VERSION >= 4010 && PY_VERSION_HEX >= 0x02060000
       .DEF_SIMPLE_METHOD(ipc_handle)
       .def("from_ipc_handle", event_from_ipc_handle,
